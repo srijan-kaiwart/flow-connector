@@ -1,7 +1,7 @@
 # Flow Connector
 
 Connect Flow image & video creation to any coding agent.
-
+no API key 
 Queue prompts, generate them in batches on [Google Flow](https://labs.google/fx/tools/flow),
 and have every file downloaded for you — driven from Claude Code, Cursor, Codex,
 Windsurf, Gemini, or the extension's own side panel.
