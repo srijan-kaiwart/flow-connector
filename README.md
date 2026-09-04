@@ -1,83 +1,117 @@
 # Flow Connector
 
-Ask your coding agent for a picture, get a file.
+**Connect your coding agent to [Google Flow](https://flow.google.com)**
+Ask it to create images and videos the same way you ask it to write code.
 
-Flow Connector is a Chrome extension that connects your coding agent to
-[Google Flow](https://flow.google.com). You ask for images or video the same way
-you ask for code, and the finished files land in your Downloads folder.
+You can also use it on its own. Give it a list of prompts and it works through
+them automatically, generating each result and saving the finished files to your
+Downloads folder while you do something else.
 
-It also works on its own. Hand it a list of prompts, walk off, come back to a
-folder of results.
+## Why you'd install it
 
-Everything runs in **your** browser, on the Google account you are already
-signed into. Nothing is proxied through a server of ours, which is why
-generating costs nothing extra and why there is no API key to buy.
+Creating images and videos one by one takes time and a lot of repetitive work.
+Flow Connector automates that process: add your prompts once and it handles the
+generation and the downloads.
 
-## Why it exists
+It also gives your coding agent access to image and video generation, so your
+agent can create visual assets when your project needs them.
 
-Flow is built for making one thing at a time. Type a prompt, pick a model, wait,
-download, repeat. That is fine for one shot. For twenty it is an hour of
-clicking, and you have to be at the keyboard for all of it.
+- Let your coding agent generate visual assets when your project needs them
+- Queue a list of prompts and let them run automatically
+- Generate variations and assets in batches
+- Images and videos download as soon as they're ready
+- Files are saved with clear, readable names
+- No API key is required — it works with your existing Google Flow account
 
-## What it does
+## How the agent connection works
 
-- **Runs a queue.** Prompts go in, files come out, in order, with names you can
-  read.
-- **Downloads for you.** Every finished image and video is saved as soon as it
-  is ready, sorted into folders.
-- **All of Flow's modes.** Text to image, image to image, text to video, first
-  and last frame, ingredients to video, video to video, characters, voices, and
-  extending a clip.
-- **Talks to your agent.** One paste and your agent can generate. There is a
-  Claude Code skill, and an MCP server for everything else.
+Open the extension, copy the setup prompt, and paste it into your coding agent
+once. The extension sets up the connection automatically using a small local
+helper — a skill for Claude Code, an MCP server for everything else.
 
-## The agent bridge
-
-Open the extension, copy the setup prompt, paste it into your agent once. It
-installs a small command-line helper and wires itself up.
-
-After that:
+After that you just say what you want:
 
 ```
-> make 8 cyberpunk street shots, 16:9, then animate the best one
+> generate 20 product images and 5 promo videos, in different styles
 ```
 
-The two halves talk over loopback on your own machine. Nothing listens on a
-public interface, and no prompt or file passes through anyone else's server.
+The connection runs locally on your computer. Your prompts and files do not pass
+through a server operated by us.
 
-You do not need an agent. The side panel does the whole job on its own if you
-would rather type prompts into it.
+**You don't need a coding agent.** The side panel handles everything on its own
+if you prefer to enter prompts yourself.
+
+## What you can make
+
+Flow Connector supports Flow's available generation modes, including:
+
+| | |
+|---|---|
+| Text to image | Image to image |
+| Text to video | First frame and last frame |
+| Ingredients to video | Video to video |
+| Create a character | Set a voice |
+| Extend a video | |
+
+The available models depend on what Google Flow makes available to your account.
+
+## What generating costs
+
+Flow Connector does not charge you per image or video.
+
+Generation happens through your own Google Flow account and uses the credits and
+limits provided by Google. The extension simply automates the workflow around
+Flow.
+
+## How it works
+
+Flow Connector works with the real Flow interface in your browser, using the
+Google account you are already signed into.
+
+**One thing to know before you install:** the Flow tab itself has to stay open
+and visible on screen while a run is in progress, on Pro as well as Free. Chrome
+slows down windows that are minimised or covered, which would stall the
+generation. The extension has a button that arranges the browser next to your
+editor in one click.
+
+Because it works through the actual Flow interface, Flow's own usage limits and
+content rules still apply. The extension does not provide additional credits or
+bypass those limits.
+
+## Free and Pro
+
+**Free** — a daily allowance of images and videos, one prompt at a time, with
+the extension panel open while it works. The current limits are shown in the
+panel and reset each day.
+
+**Pro** — faster generation, unlimited images and video, and you can close the
+extension panel and leave a run going. The price is shown in the extension
+before you pay, and it is a fixed period paid once: nothing renews on its own
+and no payment details are stored.
+
+On both plans the Flow tab itself still has to stay open and visible. Closing
+the panel is not the same as running in the background.
+
+Every model and every mode works on both plans. Nothing is held back.
+
+## Privacy
+
+Your prompts and generated files stay between your browser and the services you
+choose to use.
+
+We do not use analytics, advertising, or tracking to monitor your activity. The
+extension does not send your prompts or generated media to our servers.
+
+The one exception is a licence check, and only if you sign in to a paid plan. It
+sends your email address and a random installation id so the plan can be
+confirmed, and nothing else. Free users never send even that. Full policy:
+<https://flow-connector.flowconnector.workers.dev/privacy>
 
 ## Install
 
 From the Chrome Web Store — the listing is in review. This repo is the support
-channel and the home of the agent skill and the docs; the extension itself ships
-through the store.
-
-## Two things worth knowing before you install
-
-**The Flow tab has to stay visible.** Not minimised, not covered by another
-window. Chrome throttles windows it thinks nobody is looking at, and a throttled
-tab stalls mid-generation. The extension has a button that parks the browser
-next to your editor. This applies on the paid plan too — closing the *extension
-panel* is not the same as running in the background.
-
-**Flow's own limits still apply.** This drives the real interface, so Google's
-rate limits and content rules land exactly as they would if you were clicking.
-The extension paces itself and backs off if Flow reports unusual activity. A
-refusal is one generation, not a ban.
-
-## Free and Pro
-
-The free plan has a daily allowance of images and video, runs one prompt at a
-time, and needs the panel open while it works. The current limits are shown in
-the panel.
-
-Pro is faster, has no daily cap, and lets you close the panel. It is a fixed
-period paid once — nothing renews on its own and no card details are stored. The
-price is shown in the extension before you pay.
-
-Every model and every mode works on both plans. Nothing is held back.
+channel and the home of the [agent skill](skills/flow-generate/SKILL.md) and the
+docs; the extension itself ships through the store.
 
 ## Something broken?
 
@@ -89,7 +123,9 @@ it is usually enough to find the problem.
 
 ## Not affiliated with Google
 
-Flow Connector is an independent project. It is not affiliated with, endorsed
-by, or sponsored by Google LLC, and Google product names appear here only to say
-what this tool works with. Automating a website may be subject to that site's
-terms of service, so please use it responsibly.
+Flow Connector is an independent tool and is not affiliated with, endorsed by,
+or sponsored by Google LLC.
+
+Google product names are used only to describe compatibility. Automating a
+website may be subject to that website's terms of service, so please use the
+extension responsibly.
