@@ -49,6 +49,41 @@ through a server operated by us.
 **You don't need a coding agent.** The side panel handles everything on its own
 if you prefer to enter prompts yourself.
 
+### Which agents this works with
+
+There are only two integrations, and the second one is a standard:
+
+- **Claude Code** gets a native skill — `grok-auto skill install flow-generate`,
+  which lands in `~/.claude/skills/` and every project sees it.
+- **Everything else** registers `grok-auto-mcp`, a plain stdio MCP server. Most
+  agents take it as:
+
+  ```json
+  { "mcpServers": { "flow-connector": { "command": "grok-auto-mcp" } } }
+  ```
+
+So the question is rarely *whether* an agent works — if it speaks MCP, it does —
+but where its config file lives. The setup prompt figures that out by asking the
+agent itself, which knows better than a dropdown would.
+
+| Agent | Connects via | Config it usually writes |
+|---|---|---|
+| Claude Code | native skill | `~/.claude/skills/` |
+| Cursor | MCP | `~/.cursor/mcp.json` |
+| Codex | MCP | `~/.codex/config.toml`, or `codex mcp add` |
+| Gemini CLI | MCP | `~/.gemini/settings.json`, or `gemini mcp add` |
+| Windsurf | MCP | `~/.codeium/windsurf/mcp_config.json` |
+| Anything else that speaks MCP | MCP | wherever that agent keeps user-level servers |
+
+**Verified end to end on Claude Code.** The rest are ordinary MCP clients and
+there is nothing unusual for them to trip over, but they have not each been sat
+down and tested, and this page would rather say so than pretend. If one of them
+misbehaves, [open an issue](https://github.com/srijan-kaiwart/flow-connector/issues/new)
+— that is a bug worth fixing, not a limitation.
+
+Use your **user-level** config, not a per-project one, so the connection follows
+you between projects. The setup prompt asks for that explicitly.
+
 ## What you can make
 
 Flow Connector supports Flow's available generation modes, including:
