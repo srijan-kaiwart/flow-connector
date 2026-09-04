@@ -1,11 +1,15 @@
 # Flow Connector
 
+![Flow Connector](assets/banner.jpg)
+
 **Connect your coding agent to [Google Flow](https://flow.google.com)**
 Ask it to create images and videos the same way you ask it to write code.
 
 You can also use it on its own. Give it a list of prompts and it works through
 them automatically, generating each result and saving the finished files to your
 Downloads folder while you do something else.
+
+![Connect your coding agent to Google Flow](assets/connect.jpg)
 
 ## Why you'd install it
 
@@ -23,6 +27,8 @@ agent can create visual assets when your project needs them.
 - Files are saved with clear, readable names
 - No API key is required — it works with your existing Google Flow account
 
+![One prompt, many results](assets/bulk.jpg)
+
 ## How the agent connection works
 
 Open the extension, copy the setup prompt, and paste it into your coding agent
@@ -38,6 +44,8 @@ After that you just say what you want:
 The connection runs locally on your computer. Your prompts and files do not pass
 through a server operated by us.
 
+![One-click setup](assets/setup.jpg)
+
 **You don't need a coding agent.** The side panel handles everything on its own
 if you prefer to enter prompts yourself.
 
@@ -45,15 +53,11 @@ if you prefer to enter prompts yourself.
 
 Flow Connector supports Flow's available generation modes, including:
 
-| | |
-|---|---|
-| Text to image | Image to image |
-| Text to video | First frame and last frame |
-| Ingredients to video | Video to video |
-| Create a character | Set a voice |
-| Extend a video | |
+![All nine generation modes](assets/modes.jpg)
 
 The available models depend on what Google Flow makes available to your account.
+
+![Generate, download, name, organise](assets/downloads.jpg)
 
 ## What generating costs
 
@@ -120,6 +124,13 @@ Flow changes its interface fairly often and that is usually what breaks
 automation, so the extension's Help tab fills most of the report in for you —
 version, what the automation was doing, and where it stopped. Paste that in and
 it is usually enough to find the problem.
+
+## Press kit
+
+Everything on this page, at full resolution, is in the store listing. The
+extension's own mark:
+
+<img src="assets/icon.png" width="96" alt="Flow Connector icon">
 
 ## Not affiliated with Google
 
