@@ -46,20 +46,22 @@ through a server operated by us.
 
 ![One-click setup](assets/setup.jpg)
 
-**You don't need a coding agent.** The side panel handles everything on its own
-if you prefer to enter prompts yourself.
+**A coding agent is how you drive it.** The side panel shows what is running,
+which plan you are on and what is left today, and it is where you sign in and
+get the setup prompt — but prompts themselves come from your agent or the
+`flow-auto` command, not from the panel.
 
 ### Which agents this works with
 
 There are only two integrations, and the second one is a standard:
 
-- **Claude Code** gets a native skill — `grok-auto skill install flow-generate`,
+- **Claude Code** gets a native skill — `flow-auto skill install flow-generate`,
   which lands in `~/.claude/skills/` and every project sees it.
-- **Everything else** registers `grok-auto-mcp`, a plain stdio MCP server. Most
+- **Everything else** registers `flow-auto-mcp`, a plain stdio MCP server. Most
   agents take it as:
 
   ```json
-  { "mcpServers": { "flow-connector": { "command": "grok-auto-mcp" } } }
+  { "mcpServers": { "flow-connector": { "command": "flow-auto-mcp" } } }
   ```
 
 So the question is rarely *whether* an agent works — if it speaks MCP, it does —
